@@ -16,3 +16,12 @@ __all__ = [
     'SETTINGS_EXTENSION',
     'WORKSPACE_EXTENSION'
 ]
+
+from .app import LabServerApp
+
+def _jupyter_server_extension_paths():
+    return [
+        {'module': 'lab'}
+    ]
+
+load_jupyter_server_extension = LabServerApp.load_jupyter_server_extension
